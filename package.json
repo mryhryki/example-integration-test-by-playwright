@@ -4,7 +4,12 @@
   "author": "mryhryki",
   "license": "MIT",
   "scripts": {
-    "start": ":"
+    "build": "vite build",
+    "dev": "vite --open",
+    "lint": "mryhryki-lint -d ./src/",
+    "start": "vite preview",
+    "type": "tsc",
+    "type:watch": "tsc --watch"
   },
   "dependencies": {
     "@mryhryki/lint": "^0.0.10",
