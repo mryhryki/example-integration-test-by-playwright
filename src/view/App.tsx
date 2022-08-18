@@ -23,6 +23,7 @@ export const App: React.FC = () => {
           <label>
             <div>TODO Title</div>
             <input
+              id="title-input"
               ref={setInputRef}
               type="text"
               value={title}
@@ -32,13 +33,13 @@ export const App: React.FC = () => {
           </label>
         </div>
         <div>
-          <input type="submit" value="Add TODO" />
+          <input id="add-todo" type="submit" value="Add TODO" />
         </div>
       </form>
       <ul>
         {todos.map(({ id, title, createdAt }) => (
           <li key={id} id={id}>
-            {title} ({createdAt})<button onClick={() => remove(id)}>Remove</button>
+            <span className="todo">{title}</span> ({createdAt})<button onClick={() => remove(id)}>Remove</button>
           </li>
         ))}
       </ul>
