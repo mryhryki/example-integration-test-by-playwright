@@ -8,13 +8,15 @@
     "npm": "8.x"
   },
   "scripts": {
-    "build": "vite build",
     "dev": "run-p dev:*",
+    "dev:server": "nodemon --watch ./src/server/ --ext ts --exec 'npm run start:server'",
     "dev:view": "vite --port 50000 --open",
-    "dev:server": "nodemon --watch ./src/server/ --ext ts --exec 'esbuild --bundle --platform=node --target=node16 ./src/server/index.ts | node'",
-    "test:server": "esbuild --bundle --platform=node --target=node16 ./src/server/test.ts | node",
     "lint": "mryhryki-lint -d ./src/",
-    "start": "vite preview",
+    "start": "run-p start:*",
+    "start:server": "esbuild --bundle --platform=node --target=node16 ./src/server/index.ts | node",
+    "start:view": "vite preview --port 50000",
+    "test:server": "esbuild --bundle --platform=node --target=node16 ./src/server/test.ts | node",
+    "test:playwrite": "npx playwright test",
     "type": "tsc",
     "type:watch": "tsc --watch"
   },
