@@ -43,5 +43,8 @@
   },
   "nodemonConfig": {
     "delay": 200
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.25.0"
   }
 }
