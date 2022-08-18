@@ -1,17 +1,12 @@
 import { generateId, getNowText } from "./utils";
+import { TodoType } from "../type";
 
-export interface Todo {
-  id: string;
-  title: string;
-  createdAt: string;
-}
+let StoreOnMemory: TodoType[] = [];
 
-let StoreOnMemory: Todo[] = [];
-
-const listTodos = (): Todo[] => [...StoreOnMemory];
-const getTodo = (id: string): Todo | null => StoreOnMemory.find((todo) => todo.id === id) ?? null;
-const addTodo = (title: string): Todo => {
-  const todo: Todo = { id: generateId(), title, createdAt: getNowText() };
+const listTodos = (): TodoType[] => [...StoreOnMemory];
+const getTodo = (id: string): TodoType | null => StoreOnMemory.find((todo) => todo.id === id) ?? null;
+const addTodo = (title: string): TodoType => {
+  const todo: TodoType = { id: generateId(), title, createdAt: getNowText() };
   StoreOnMemory = [todo, ...StoreOnMemory];
   return todo;
 };

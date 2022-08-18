@@ -1,10 +1,12 @@
 import express from "express";
 import bodyParser from "body-parser";
+import cors from "cors";
 import { Todo } from "./store";
 
 export const ServerPort = 50001;
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 app.use((req, _, next) => {
   // Simple request logger
