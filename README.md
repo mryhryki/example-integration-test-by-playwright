@@ -1,6 +1,6 @@
-# example-integration-test-by-playwrite
+# example-integration-test-by-playwright
 
-This repository is example of integration test for frontend by [Playwrite](https://playwright.dev/).
+This repository is example of integration test for frontend by [Playwright](https://playwright.dev/).
 
 ## Development
 
